@@ -1,6 +1,10 @@
 <script>
-    import { store } from '../store.js'
+    import { store } from '../store.js';
+    import Slider from './Slider.vue';
     export default {
+        components:{
+            Slider    
+        },
         data(){
             return{
                 store
@@ -13,37 +17,17 @@
 
 <template lang="">
     <main>
-        <ul>
-            <h2>FILM</h2>
-            <li v-for="(item,index) in store.arrayMovies">
-                <h3>{{ item.title }}</h3>
-                <ul>
-                    <li>{{ item.original_title }}</li>
-                    <li>    <!--mostro la bandiere corrispondente alla proprietà 'original_language'-->
-                        <img :src="`../public/flags/${item.original_language}.png`" :alt="`${item.original_language}`-flag">
-                    </li>
-                    <li>{{ item.vote_average }}</li>
-                </ul>
-            </li>
-        </ul>
-        <ul>
-            <h2>SERIE TV</h2>
-            <li v-for="(item,index) in store.arraySeries">
-                <h3>{{ item.name }}</h3>
-                <ul>
-                    <li>{{ item.original_name }}</li>
-                    <li>    <!--mostro la bandiere corrispondente alla proprietà 'original_language'-->
-                        <img :src="`../public/flags/${item.original_language}.png`" :alt="`${item.original_language}`-flag">
-                    </li>
-                    <li>{{ item.vote_average }}</li>
-                </ul>
-            </li>
- 
-        </ul>
+        <div class="my-container">
+            <h3>Film</h3>
+            <Slider />
+            <h3>Serie TV</h3>
+            <Slider />
+        </div>
     </main>
 </template>
 
 <style lang="scss" scoped>
+  @use '../scss/generals.scss' as *;
     ul{
         display: inline-block;
     }
