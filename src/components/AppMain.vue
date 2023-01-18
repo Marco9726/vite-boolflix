@@ -1,37 +1,38 @@
 <script>
     import { store } from '../store.js';
-    import Slider from './Slider.vue';
+    import SliderMovies from './SliderMovies.vue';
+    import SliderSeries from './SliderSeries.vue'
     export default {
         components:{
-            Slider    
+            SliderMovies,
+            SliderSeries
         },
         data(){
             return{
                 store
             }
-        },
-        
-
+        },   
     }
 </script>
 
 <template lang="">
     <main>
         <div class="my-container">
-            <h3>Film</h3>
-            <Slider />
-            <h3>Serie TV</h3>
-            <Slider />
+            <!-- //visualizzo i titoli se i relativi array contengono elementi  -->
+            <h3 v-if="store.arrayMovies.length > 0">Film</h3>
+            <SliderMovies />
+            <h3 v-if="store.arraySeries.length > 0">Serie TV</h3>
+            <SliderSeries />
         </div>
     </main>
 </template>
 
 <style lang="scss" scoped>
   @use '../scss/generals.scss' as *;
-    ul{
-        display: inline-block;
+  @use '../scss/partials/variables' as *;
+
+    main{
+        padding-top: 70px;
     }
-    img{
-        height: 1rem;
-    }
+    
 </style>

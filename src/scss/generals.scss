@@ -11,6 +11,10 @@
     font-family: 'Montserrat';
 }
 
+body {
+    background-color: $dark;
+}
+
 i {
     cursor: pointer;
 }
@@ -21,4 +25,8 @@ i {
 
 .small-text {
     font-size: $small
+}
+
+h3 {
+    color: white;
 }
