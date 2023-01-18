@@ -1,5 +1,7 @@
 @use './partials/_mixins.scss' as *;
+@use './partials/variables' as *;
 @import "bootstrap/scss/bootstrap";
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 * {
     margin: 0;
@@ -7,6 +9,14 @@
     box-sizing: border-box;
 }
 
+i {
+    cursor: pointer;
+}
+
 .my-container {
     @include my-container
+}
+
+.small-text {
+    font-size: $small
 }
