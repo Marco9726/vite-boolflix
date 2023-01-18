@@ -10,11 +10,17 @@
       methods: {
             //metodo per mostrare le card
             showCards(){
-                let newUrl = store.urlMovies + store.searchText
+                let newUrlMovies = store.urlMovies + store.searchText
                 //chiamata axios per mostrare i film
-                axios.get(newUrl).then((response) => {
+                axios.get(newUrlMovies).then((response) => {
                     store.arrayMovies = response.data.results
-                    console.log(store.arrayMovies);
+                });
+                //chiamata per mostrare le serie tv
+                let newUrlSeries = store.urlSeries + store.searchText
+                //chiamata axios per mosytrare le serie
+                axios.get(newUrlSeries).then((response) => {
+                    store.arraySeries = response.data.results
+                    console.log(store.arraySeries);
                 })
             }
 
