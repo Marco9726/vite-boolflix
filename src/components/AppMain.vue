@@ -35,7 +35,12 @@
   @use '../scss/partials/variables' as *;
 
     main{
-        padding-top: 70px;
+        position: relative;
+        bottom: 70px;
+
+        h1{
+            margin-top: 140px;
+        }
     }
     
 </style>

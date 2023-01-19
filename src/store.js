@@ -9,5 +9,5 @@ export const store = reactive({
     arraySeries: [],
     //campo di ricerca
     searchText: '',
-    objectclicked: null
+    objectActive: ''
 })

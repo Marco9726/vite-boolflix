@@ -10,7 +10,7 @@
 </script>
 
 <template>
-    <div id="searchbar" class="d-flex align-items-center">
+    <div id="searchbar" class="d-flex align-items-center bg-black">
         <span class="input-group-text h-50 d-flex justify-content-center bg-black">
             <i id="glass" class="fa-solid fa-magnifying-glass text-white" @click="$emit('search')"></i> <!--emit collegata ad AppHeader-->
         </span>     <!-- passo il valore dell'input tramite v-model alla proprietà 'searchText' dello store--> <!--emit collegata ad AppHeader-->

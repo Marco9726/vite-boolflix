@@ -5,7 +5,7 @@ export default {
     },
     data(){
         return{
-            path: 'http://image.tmdb.org/t/p/w500/'
+            path: 'http://image.tmdb.org/t/p/w780/'
         }
     },
     methods: {
@@ -43,10 +43,11 @@ export default {
     .my-card{
         min-width: calc(100% / 6 - .5rem);
         height: 300px;
-        margin-right: 5px;
+        margin-right: .5rem;
         margin-bottom: 5px;
         cursor: pointer;
         position: relative;
+
         img{
             object-fit: cover;
             object-position: center;

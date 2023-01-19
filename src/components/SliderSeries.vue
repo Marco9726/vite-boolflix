@@ -10,13 +10,18 @@
                 store
             }
         },
+        methods: {
+            saveObject(item){
+                store.objectActive = item;
+            }
+        }
         
     }
 </script>
 <template>
     <div class="slider d-flex">
         <!-- ciclo le card nell'array delle serie  e passo la prop 'card' a Card.vue -->
-        <Card v-for="(item,index) in store.arraySeries" :key="index" :card="item" />
+        <Card v-for="(item,index) in store.arraySeries" :key="index" :card="item" @click="saveObject(item)" />
     </div>
 </template>
 <style lang="scss">

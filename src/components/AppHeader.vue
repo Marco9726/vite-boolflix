@@ -14,16 +14,19 @@
       methods: {
             //metodo per mostrare le card
             showCards(){
-                let newUrlMovies = store.urlMovies + store.searchText
-                //chiamata axios per mostrare i film
-                axios.get(newUrlMovies).then((response) => {
-                    store.arrayMovies = response.data.results
+              let newUrlMovies = store.urlMovies + store.searchText
+              //chiamata axios per mostrare i film
+              axios.get(newUrlMovies).then((response) => {
+                store.arrayMovies = response.data.results
+                // visualizzo il primo film trovato come oggetto attivo predefinito 
+                store.objectActive = store.arrayMovies[0]
                 });
                 let newUrlSeries = store.urlSeries + store.searchText
                 //chiamata per mostrare le serie tv
                 axios.get(newUrlSeries).then((response) => {
                     store.arraySeries = response.data.results
                 })
+
             }
 
         }
@@ -57,13 +60,15 @@
 
   header{
     height: 70px;
-    background-color: black;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, $dark 100%);
+    // background-color: black;
+    // background: linear-gradient(180deg, rgba(0,0,0,1) 0%, $dark 100%);
+    background-color: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    
+    z-index: 2;
     #logo img{
       height: 30px;
     }

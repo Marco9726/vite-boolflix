@@ -11,10 +11,10 @@
             }
         },
         methods: {
-            // saveObject(item){
-            //     store.
-            // }
-        },
+            saveObject(item){
+                store.objectActive = item;
+            }
+        }
     }
 </script>
 
@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" >
   @use '../scss/generals.scss' as *;
 
     .slider{
