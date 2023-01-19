@@ -1,9 +1,9 @@
 <script>
     import { store } from '../store.js'
-    import Card from './Card.vue';
+    import CardMovie from './CardMovie.vue';
     export default {
         components:{
-          Card
+          CardMovie
         },
         data(){
             return{
@@ -14,9 +14,9 @@
 </script>
 
 <template>
-    <div class="slider w-100">
+    <div class="slider w-100 d-flex">
         <!-- ciclo le card nell'array dei film  e passo la prop 'card' a Card.vue -->
-        <Card v-for="(item,index) in store.arrayMovies" :key="index" :card="item"/>
+        <CardMovie v-for="(item,index) in store.arrayMovies" :key="index" :card="item"/>
     </div>
 </template>
 
@@ -24,8 +24,9 @@
   @use '../scss/generals.scss' as *;
 
     .slider{
-      overflow-x:scroll;
+      overflow-x:auto;
       margin-bottom: 3rem!important;
+      flex-wrap: nowrap;
     }
     
 </style>

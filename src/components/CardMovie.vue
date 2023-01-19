@@ -21,10 +21,11 @@ export default {
 <style lang="scss">
     .my-card{
         display: inline-block;
-        width: calc(100% / 6 - 5px);
+        min-width: calc(100% / 6 - 5px);
         height: 14vh;
         margin-right: 5px;
         margin-bottom: 5px;
+        cursor: pointer;
 
         img{
             object-fit: cover;
