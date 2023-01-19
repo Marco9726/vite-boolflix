@@ -1,21 +1,22 @@
 <script>
     import { store } from '../store.js'
-    import CardSerie from './CardSerie.vue';
+    import Card from './Card.vue';
     export default {
         components:{
-          CardSerie
+          Card
         },
         data(){
             return{
                 store
             }
-        }
+        },
+        
     }
 </script>
 <template>
-    <div class="slider d-flex w-100">
+    <div class="slider d-flex">
         <!-- ciclo le card nell'array delle serie  e passo la prop 'card' a Card.vue -->
-        <CardSerie v-for="(item,index) in store.arraySeries" :key="index" :card="item"/>
+        <Card v-for="(item,index) in store.arraySeries" :key="index" :card="item" />
     </div>
 </template>
 <style lang="scss">

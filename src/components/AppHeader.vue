@@ -14,11 +14,13 @@
                 //chiamata axios per mostrare i film
                 axios.get(newUrlMovies).then((response) => {
                     store.arrayMovies = response.data.results
+                    store.allMediaArray.push(response.data.results)
                 });
                 let newUrlSeries = store.urlSeries + store.searchText
                 //chiamata per mostrare le serie tv
                 axios.get(newUrlSeries).then((response) => {
                     store.arraySeries = response.data.results
+                    store.allMediaArray.push(response.data.results)
                 })
             }
 
