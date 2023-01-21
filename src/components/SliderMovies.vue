@@ -18,8 +18,8 @@
             },
             // metodo per mostrare il cast 
             showCast(){
-                // compongo l'url per la chiamata api con l'id del media attivo 
-                let urlCast = "https://api.themoviedb.org/3/movie/" + store.objectActive.id + "/credits?api_key=e3ed1f013cf6f646f124a113802c7b5c&language=en-US";
+                // compongo l'url per la chiamata api con l'uri ,l'id del media attivo e la mia APIkey
+                let urlCast = store.uri + 'movie/' + store.objectActive.id + '/credits' + store.myApiKey;
                 // chiamata axios 
                 axios.get(urlCast).then((response) => {
                     // setto la proprietà 'arrayCast' dello store con i primi 5 oggetti dell'array di risposta della chiamata 
