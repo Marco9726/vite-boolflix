@@ -1,22 +1,20 @@
 <script>
-export default {
-    props:{
-        card: Object
-    },
-    data(){
-        return{
-            path: 'http://image.tmdb.org/t/p/w780/'
-        }
-    },
-    methods: {
-        //metodo per calcolare le stelle piene in base al voto
-        filledStars(){
-            return Math.round(this.card.vote_average / 2);
-        }   
+    export default {
+        props:{
+            card: Object
+        },
+        data(){
+            return{
+                path: 'http://image.tmdb.org/t/p/w780/'
+            }
+        },
+        methods: {
+            //metodo per calcolare le stelle piene in base al voto
+            filledStars(){
+                return Math.round(this.card.vote_average / 2);
+            }       
+        }          
     }
-    
-   
-}
 </script>
 
 <template>

@@ -20,16 +20,21 @@
                 store.arrayMovies = response.data.results
                 // visualizzo il primo film trovato come oggetto attivo predefinito 
                 store.objectActive = store.arrayMovies[0]
-                });
-                let newUrlSeries = store.urlSeries + store.searchText
-                //chiamata per mostrare le serie tv
-                axios.get(newUrlSeries).then((response) => {
-                    store.arraySeries = response.data.results
+                // compongo l'urlCast per la chiamata api con l'id del media attivo per visualizzare il cast del film predefinito
+                let urlCast = "https://api.themoviedb.org/3/movie/" + store.objectActive.id + "/credits?api_key=e3ed1f013cf6f646f124a113802c7b5c&language=en-US";
+                axios.get(urlCast).then((response) => {
+                  store.arrayCast = response.data.cast.slice(0,5)
                 })
 
+            
+              });
+              let newUrlSeries = store.urlSeries + store.searchText
+              //chiamata per mostrare le serie tv
+              axios.get(newUrlSeries).then((response) => {
+                store.arraySeries = response.data.results
+              }) 
             }
-
-        }
+        }   
     }
 </script>
 
@@ -47,7 +52,7 @@
         <!-- parte destra  -->
         <div id="col-right" class="col-2 d-flex align-items-center justify-content-end">
           <!-- searchbar  --> <!--emit arrivata da AppSearch per chiamare il metodo per generare le cards-->
-        <AppSearch @search="showCards" />
+        <AppSearch @search="showCards"/>
         </div>
       </div>
     </div>
