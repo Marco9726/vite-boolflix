@@ -20,10 +20,17 @@
                 store.arrayMovies = response.data.results
                 // visualizzo il primo film trovato come oggetto attivo predefinito 
                 store.objectActive = store.arrayMovies[0]
+                // CAST 
                 // compongo l'urlCast per la chiamata api con l'id del media attivo per visualizzare il cast del film predefinito
-                let urlCast = store.uri + store.objectActive.id + store.myApiKey;
+                let urlCast = store.uri + 'movie/' + store.objectActive.id + '/credits' + store.myApiKey;
                 axios.get(urlCast).then((response) => {
                   store.arrayCast = response.data.cast.slice(0,5)
+                });
+                // GENERI 
+                 // compongo l'url per la chiamata api con l'uri ,l'id del media attivo e la mia APIkey
+                 let urlGenres = store.uri + 'movie/' + store.objectActive.id + store.myApiKey;
+                axios.get(urlGenres).then((response) => {
+                    store.arrayGenres = response.data.genres
                 })
 
             

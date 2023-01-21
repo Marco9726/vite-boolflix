@@ -38,6 +38,12 @@
                         <li v-for="(item,index) in store.arrayCast" :key="index" class="small-text">{{ item.name }}</li>
                     </ul>
                 </div>
+                <div class="genres">
+                    <ul class="d-flex p-0">
+                        <!-- ciclo i genere nell'arrayGenres  -->
+                        <li v-for="(item,index) in store.arrayGenres" :key="index">{{ item.name }}</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
