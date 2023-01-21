@@ -14,5 +14,6 @@ export const store = reactive({
     //campo di ricerca
     searchText: '',
     objectActive: '',
-    arrayCast: []
+    arrayCast: [],
+    arrayGenres: []
 })
