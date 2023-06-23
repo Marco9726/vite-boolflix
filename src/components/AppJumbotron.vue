@@ -40,7 +40,7 @@
                 </div>
                 <div class="genres">
                     <ul class="d-flex p-0">
-                        <!-- ciclo i genere nell'arrayGenres  -->
+                        <!-- ciclo i generi nell'arrayGenres  -->
                         <li v-for="(item,index) in store.arrayGenres" :key="index">{{ item.name }}</li>
                     </ul>
                 </div>
